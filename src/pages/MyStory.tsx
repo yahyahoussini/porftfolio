@@ -211,7 +211,6 @@ const MyStory = () => {
         >
           <source src="/assets/blooming-flowers.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20" />
       </div>
 
       {/* Scroll Progress Timeline */}
