@@ -88,7 +88,7 @@ const CreativeBranding = () => {
             Smart brand analysis
           </h2>
           <p className="text-xl md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-16">
-            Advanced tools automatically analyze your brand elements, so you don't have to. 
+            Advanced tools automatically analyze your brand elements with certifier Data Analyst expert and certifier Business Intelligence expert, so you don't have to.
             Our systems often identify patterns you haven't noticed.
           </p>
           <div className="bg-card/5 backdrop-blur-sm border border-border/10 rounded-3xl p-12 hover:scale-105 transition-transform duration-700">
