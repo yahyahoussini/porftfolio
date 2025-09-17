@@ -201,7 +201,7 @@ const MyStory = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-30"
           onLoadedData={() => {
             // Ensure video is ready for scrubbing
             if (videoRef.current) {
@@ -211,6 +211,14 @@ const MyStory = () => {
         >
           <source src="/assets/blooming-flowers.mp4" type="video/mp4" />
         </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20" />
+      </div>
+
+      {/* Cosmic overlay effects */}
+      <div className="fixed inset-0 z-[1]">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-gentle" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-muted/5 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '4s' }} />
       </div>
 
       {/* Scroll Progress Timeline */}

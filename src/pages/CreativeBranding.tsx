@@ -128,7 +128,7 @@ const CreativeBranding = () => {
       <section className="py-32 px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-12 tracking-tight">
-            Welcome to Creative Branding
+            Welcome to <span className="font-bold">Creative Branding</span>
           </h2>
           <p className="text-2xl md:text-3xl font-light text-muted-foreground leading-relaxed">
             Zero noise or distractions. No trends, no gimmicks. 
