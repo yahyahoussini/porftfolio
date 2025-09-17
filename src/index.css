@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 340 43% 1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 43% 1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 43% 1%;
+
+    --primary: 340 43% 1%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 340 43% 1%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 340 43% 1%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --ai-purple: 262 83% 58%;
+    --ai-purple-foreground: 0 0% 100%;
+
+    --gold: 45 93% 47%;
+    --gold-foreground: 340 43% 1%;
+
+    --navy: 340 43% 1%;
+    --navy-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 340 43% 1%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(340 43% 1%), hsl(220 14% 96%));
+    --gradient-ai: linear-gradient(135deg, hsl(262 83% 58%), hsl(220 14% 96%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(45 93% 47%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 12px rgba(5, 2, 3, 0.05);
+    --shadow-card-hover: 0 8px 24px rgba(5, 2, 3, 0.1);
+    --shadow-hero: 0 10px 40px rgba(5, 2, 3, 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 15% 9%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 15% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 220 15% 9%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 100%;
+    --accent-foreground: 220 15% 9%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --ai-purple: 262 83% 58%;
+    --ai-purple-foreground: 0 0% 100%;
+
+    --gold: 45 93% 47%;
+    --gold-foreground: 220 15% 9%;
+
+    --navy: 220 15% 9%;
+    --navy-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 0 0% 100%;
+
+    /* Cosmic colors */
+    --cosmic-bg: 220 15% 9%;
+    --cosmic-secondary: 220 15% 10%;
+    --cosmic-accent: 0 0% 100%;
+    --cosmic-muted: 0 0% 65%;
+
+    /* Dark mode shadows */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --shadow-hero: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --shadow-cosmic: 0 0 40px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Achievement Badge */
+  .achievement-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
+  }
+
+  .achievement-badge.gold {
+    @apply bg-gradient-to-r from-gold/20 to-gold/30 text-gold border border-gold/40 hover:shadow-lg hover:shadow-gold/20;
+  }
+
+  .achievement-badge.success {
+    @apply bg-gradient-to-r from-success/20 to-success/30 text-success border border-success/40 hover:shadow-lg hover:shadow-success/20;
+  }
+
+  .achievement-badge.ai {
+    @apply bg-gradient-to-r from-ai-purple/20 to-ai-purple/30 text-ai-purple border border-ai-purple/40 hover:shadow-lg hover:shadow-ai-purple/20;
+  }
+
+  .achievement-badge.primary {
+    @apply bg-gradient-to-r from-primary/20 to-primary/30 text-primary border border-primary/40 hover:shadow-lg hover:shadow-primary/20;
+  }
+
+  /* Project Card */
+  .project-card {
+    @apply bg-card rounded-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 hover:translate-y-[-2px] border border-border/50;
+  }
+
+  /* Gradient Text */
+  .gradient-text-hero {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .gradient-text-ai {
+    @apply bg-gradient-to-r from-ai-purple to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Smooth animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  /* Font families */
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-pulse-gentle {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  /* Cosmic effects */
+  .particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .particle:nth-child(odd) {
+    animation-delay: -2s;
+  }
+
+  .particle:nth-child(even) {
+    animation-delay: -4s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 1;
+    }
+  }
+
+  .cosmic-gradient {
+    background: radial-gradient(circle at 50% 50%, hsl(220 15% 15%) 0%, hsl(220 15% 9%) 100%);
+  }
+
+  .text-shimmer {
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.5));
+    transform-origin: left;
+    z-index: 1000;
+  }
+}
