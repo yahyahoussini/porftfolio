@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,17 +9,15 @@ import ToolsSection from '@/components/cosmos/ToolsSection';
 import ProcessSection from '@/components/cosmos/ProcessSection';
 import ShowcaseSection from '@/components/cosmos/ShowcaseSection';
 import { Button } from '@/components/ui/button';
+import DragToExplore from '@/components/creative-branding/DragToExplore';
+import { BRAND_ITEMS } from '@/components/creative-branding/assets';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CreativeBranding = () => {
+const CreativeBrandingPage = () => {
   useEffect(() => {
-    // Enable dark mode for this page
     document.documentElement.classList.add('dark');
-
-    // Smooth scrolling setup
     let ctx = gsap.context(() => {
-      // Global scroll progress indicator
       gsap.to(".scroll-progress", {
         scaleX: 1,
         ease: "none",
@@ -28,8 +28,6 @@ const CreativeBranding = () => {
           scrub: 0.3,
         }
       });
-
-      // Parallax effect for background elements
       gsap.utils.toArray(".parallax-slow").forEach((element: any) => {
         gsap.to(element, {
           yPercent: -50,
@@ -42,7 +40,6 @@ const CreativeBranding = () => {
           }
         });
       });
-
       gsap.utils.toArray(".parallax-fast").forEach((element: any) => {
         gsap.to(element, {
           yPercent: -100,
@@ -56,32 +53,18 @@ const CreativeBranding = () => {
         });
       });
     });
-
     return () => {
       ctx.revert();
-      // Clean up dark mode when leaving page
-      // document.documentElement.classList.remove('dark');
     };
   }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Scroll Progress Indicator */}
       <div className="scroll-progress fixed top-0 left-0 w-full h-0.5 bg-foreground z-50 origin-left scale-x-0" />
-      
-      {/* Hero Section */}
       <HeroSection />
-      
-      {/* Services Section */}
       <ServicesSection />
-      
-      {/* Tools Section */}
       <ToolsSection />
-      
-      {/* Process Section */}
       <ProcessSection />
-
-      {/* AI Section */}
       <section className="py-32 px-6 relative">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-12 tracking-tight">
@@ -103,8 +86,6 @@ const CreativeBranding = () => {
           </div>
         </div>
       </section>
-
-      {/* Portfolio Search Section */}
       <section className="py-32 px-6 relative">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-12 tracking-tight">
@@ -123,8 +104,6 @@ const CreativeBranding = () => {
           </div>
         </div>
       </section>
-
-      {/* Philosophy Section */}
       <section className="py-32 px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-12 tracking-tight">
@@ -136,11 +115,10 @@ const CreativeBranding = () => {
           </p>
         </div>
       </section>
-
-      {/* Showcase Section */}
       <ShowcaseSection />
-
-      {/* Final CTA */}
+      <section id="drag-to-explore" className="relative bg-background">
+        <DragToExplore items={BRAND_ITEMS} />
+      </section>
       <section className="py-32 px-6 relative text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-12 tracking-tight">
@@ -166,8 +144,6 @@ const CreativeBranding = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Form Section */}
       <section className="py-32 px-6 relative text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-12 tracking-tight">
@@ -193,4 +169,4 @@ const CreativeBranding = () => {
   );
 };
 
-export default CreativeBranding;
+export default CreativeBrandingPage;
