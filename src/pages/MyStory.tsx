@@ -214,13 +214,6 @@ const MyStory = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20" />
       </div>
 
-      {/* Cosmic overlay effects */}
-      <div className="fixed inset-0 z-[1]">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-gentle" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-muted/5 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '4s' }} />
-      </div>
-
       {/* Scroll Progress Timeline */}
       <div className="fixed left-8 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
         <div className="relative h-80 w-1 bg-muted/20 rounded-full">
