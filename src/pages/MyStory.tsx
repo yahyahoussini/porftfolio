@@ -201,7 +201,7 @@ const MyStory = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover"
           onLoadedData={() => {
             // Ensure video is ready for scrubbing
             if (videoRef.current) {
