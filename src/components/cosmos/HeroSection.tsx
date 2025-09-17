@@ -86,7 +86,7 @@ const HeroSection = () => {
           ref={titleRef}
           className="mb-8"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-foreground mb-4 tracking-tight">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground mb-4 tracking-tight">
             Creative Branding
           </h1>
         </div>
